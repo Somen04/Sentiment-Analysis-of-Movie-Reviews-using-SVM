@@ -1,7 +1,9 @@
 1.TITLE
 
 Name: Somen Senapati
+
 Program: IITG x Masai – Module III Capstone Project
+
 Dataset: Stanford IMDB Movie Review Dataset
 
 2.PROBLEM STATEMENT
@@ -27,26 +29,30 @@ The project follows a classical machine learning pipeline. First, the raw text d
 6.METHODOLOGY
 
 Data Preprocessing:
+
 Missing values were handled by replacing null entries with empty strings. Text was converted to lowercase, and punctuation and special characters were removed. Stopwords were removed using the NLTK stopword list; however, negation words such as “not”, “no”, and “nor” were intentionally retained, as they play a crucial role in sentiment interpretation. Lemmatization was applied to reduce vocabulary size and improve generalization.
 
 Feature Extraction:
+
 TF-IDF vectorization was applied to convert cleaned text into numerical features. Initially, the TF-IDF vocabulary size was limited to 5,000 features, which provided a strong baseline performance. Subsequently, the feature size was increased to 10,000, resulting in improved classification accuracy from ~0.89 to ~0.91. This indicated that a richer vocabulary helped capture additional sentiment-bearing terms. Therefore, 10,000 TF-IDF features with unigrams and bigrams were selected for the final model.
 
 Model Training:
+
 Support Vector Machines were trained using Linear, Polynomial (degree 3), and RBF kernels. Class weight balancing was applied to improve robustness.
 
 
 
-7.RESULTS 
+7.RESULTS AND OBSERVATIONS
 
 The performance of the Support Vector Machine (SVM) models was evaluated using Accuracy and F1-score on the test dataset.
 
 Model Performance Comparison
-Kernel	Accuracy	F1-score
-Linear SVM	0.9007	0.90
-Polynomial SVM	0.8749	0.87
-RBF SVM	0.9054	0.91
-Observations
+| Kernel | Accuracy | F1-score |
+|------|----------|----------|
+| Linear | 0.9007 | 0.90 |
+| Polynomial | 0.8749 | 0.87 |
+| RBF | 0.9054 | 0.91 |
+
 
 The RBF SVM achieved the highest accuracy and F1-score.
 
